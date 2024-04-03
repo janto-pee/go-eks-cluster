@@ -1,171 +1,355 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Oga Landlord RealEstate"></a>
-</p>
+# Go EKS Cluster
+## Table of Contents
 
-<h3 align="center">go eks cluster</h3>
-<p align="center"> Platinum Bank is a digital banking platform built on Go 
-</p>
-<!-- <div align="center">
+1. [What is DRF?](#what-is-nextjs)
+1. [Introduction](#introduction)
+1. [Project Initialization](#project-setup)
+1. [Folder Structure](#folder-structure)
+1. [Postgresql Setup](#git-setup)
+1. [Configure GDAL](#code-formatting-and-quality-tools)
+1. [Set Env Variables](#git-hooks)
+1. [Create Super User](#vs-code-configuration)
+1. [Create Model](#debugging)
+1. [Serializers](#directory-structure)
+1. [Views](#adding-storybook)
+1. [Setup Account](#creating-a-component-template)
+1. [Account Serializer](#using-the-component-template)
+1. [Error Handling](#adding-a-custom-document)
+1. [Package](#adding-layouts)
+1. [Terraform](#deployment)
+1. [Deployment](#next-steps)
+1. [Wrapping Up](#wrapping-up)
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+## What is Django Rest Framework?
 
-</div> -->
+\_Django REST framework abbreviated as "DRF" is a powerful and flexible toolkit for building Web APIs. Although DRF and Django have a lot of similarities, they are suited for differentpurposes.
 
----
+Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source
 
+DRF is a powerful and flexible toolkit used to build Web APIs on top of Django. While Django deals with the overall web application, including both frontend and backend components, DRF is used to build RESTful APIs that allow interaction and communication between different software components.
 
+With DRF, it’s easier to design the CRUD operations and use a Django Server as a REST API. Django Rest framework leverages Django’s capabilities to facilitate the development of scalable, maintainable, and secure APIs. It adheres to Django’s principles like DRY (Don’t Repeat Yourself) and emphasizes reusability and modularity.
 
-## 📝 Table of Contents
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+## Introduction
 
-## 🧐 About <a name = "about"></a>
-Platinum Bank is built to showcase your online Banking Business. With Platinum Bank, building your Financial Technology, Credit Card, Payment Gateway, and Insurance website is just a click away.
+This project documentation does not replace the official documentation, which is absolutely great. Therefore, I highly encourage you to go through at least the [DRF features](https://www.djangoproject.com/) section before you use this project, so you'll be familiar with the terminology and tools and some of the features they provide that are similar.
 
-Platinum Bank is perfect for Online Banking and has a professional design with a 100% responsive layout. Whether you’re looking to enhance customer engagement, streamline transactions, or provide personalized financial management tools, Platinum empowers you to create a dynamic website tailored to your specific need
+Please review the table of contents to get an idea of each of the topics we will be touching in this extensive tutorial.
 
+Now, with all that said, if you are ready, let's jump in!
 
+## Project Initialization
 
-🎉Features:
+We'll begin by creating a folder for the project.
 
-- 🔥 Online Banking
-- 🎨 Account Transfers
-- 💅 Alerts
-- 🎉 Deposits
-- ✅ Personal Finance Planning
-- ✏️ Loans
+```bash
+mkdir indeedjob
+# npx create-next-app --ts nextjs-fullstack-app-template
 
-## 🏁 Getting Started <a name = "getting_started"></a>
-Run the following command on your local environment:
-
-```
-git clone --depth=1 https://github.com/janto-pee/go-eks-cluster.git go-eks-cluster
-cd go-eks-cluster
-npm install
+# cd nextjs-fullstack-app-template
 ```
 
-Then, you can run locally in development mode with live reload:
+Lets install the virtualenv tool to create an isolated Python environments.
 
-```
-npm run dev
-```
-
-Open http://localhost:3000 with your favorite browser to see your project. For your information, Next JS need to take some time to compile the project for your first time.
-
-
-<!-- ## 🔧 Running the tests <a name = "tests"></a> -->
-## 🔧 Project Structure <a name = "tests"></a>
-
-```
-.
-├── README.md            
-├── package.js           
-├── public              
-│   │── assets
-│   └── vite.svg         
-├── src
-│   ├── component      
-│   ├── context          
-│   ├── layout       
-│   ├── page            
-│   ├── types          
-│   ├── utils            
-│   ├── App.css         
-│   ├── App.tsx        
-│   ├── config.ts        
-│   ├── index.css      
-│   ├── main.tsx       
-│   └── assets         
-├── tailwind.config.js  
-└── tsconfig.json       
+```bash
+python -m pip install --user virtualenv
+python -m virtualenv --help
 ```
 
-## ✅Customization
-You can easily configure the theme. Please change the following file:
+We will create and activate a virtual environment using the installed tool;
 
-- `public/apple-touch-icon.png`, `public/favicon.ico`, `public/favicon-16x16.png` and `public/favicon-32x32.png`: your favicon, you can generate from https://favicon.io/favicon-converter/
-- `src/styles/global.css`: your CSS file using Tailwind CSS
-- `utils/AppConfig.ts`: configuration file
-- `src/pages/index.tsx`: the index page of the theme that uses the `Base` component
-- `src/template/Base.tsx`: the `Base` component using component blocks
-- `src/templates/*`: the list of component blocks
-- `src/*`: other folders in src are the atomic components used by components blocks
-
-Here is the layer:
-
-- the entry point: `index.tsx` in `src/pages`
-- the `Base` template: `Base.tsx` in `src/templates`
-- use component blocks from `src/templates/*`
-- use atomic components from `src/*`
-
-## 🎉Features
-
-Developer experience first:
-
-- 🔥 [Next.js](https://nextjs.org) for Static Site Generator
-- 🎨 Integrate with [Tailwind CSS](https://tailwindcss.com)
-- 💅 PostCSS for processing Tailwind CSS and integrated to `styled-jsx`
-- 🎉 Type checking [TypeScript](https://www.typescriptlang.org)
-- ✅ Strict Mode for TypeScript and React 18
-- ✏️ Linter with [ESLint](https://eslint.org) (default NextJS, NextJS Core Web Vitals and Airbnb configuration)
-- 🛠 Code Formatter with [Prettier](https://prettier.io)
-- 🦊 Husky for Git Hooks
-- 🚫 Lint-staged for running linters on Git staged files
-- 🗂 VSCode configuration: Debug, Settings, Tasks and extension for PostCSS, ESLint, Prettier, TypeScript
-- 🤖 SEO metadata, JSON-LD and Open Graph tags with Next SEO
-- ⚙️ [Bundler Analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
-- 🖱️ One click deployment with Netlify (or manual deployment to any hosting services)
-- 🌈 Include a FREE theme
-- 💯 Maximize lighthouse score
-
-## 🎈 Build & Deploy <a name="usage"></a>
-How to deploy to popular hosting sites
-You can see the results locally in production mode with:
-
-```
-$ npm run build
-$ npm run start
+```bash
+virtualenv env
+source env/scriptsactivate
 ```
 
-The generated HTML and CSS files are minified (built-in feature from Next js). It will also removed unused CSS from [Tailwind CSS](https://tailwindcss.com).
-
-You can create an optimized production build with:
+we will need to install django, django-rest-framework, django-filters as well as other programs in the requirements.txt
 
 ```
-npm run build-prod
+django
+djangorestframework
+djangorestframework-simplejwt
+django-storages
+django-cors-headers
+django-dotenv
+django-filter
+gunicorn
+geocoder
+whitenoise
+boto3
+psycopg2
+dj-database-url
 ```
 
-Now, your theme is ready to be deployed. All generated files are located at `out` folder, which you can deploy with any hosting service.
+Now install
+
+```bash
+pip install -r requirements.txt
+```
+
+## Folder Structure
+
+We would like for this project to host both the frontend and backend of this project.
+
+- `mkdir frontend` - will use typescript, next.js, react, tailwindcss
+- `mkdir backend` - Will use python, django-rest-framework
+
+Now lets proceed with the `backend` :
+
+```
+cd backend
+django-admin startproject backend .
+django-admin manage.py startapp job
+django-admin manage.py startapp account
+```
+
+The `django-admin startproject backend .` helps to auto-generate some code that establishes a Django project – a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings. The `django-admin manage.py startapp job` is a command-line utility for administrative tasks.
+
+## Database (Postgresql) Setup
+
+Make sure you have a postgres database set up already, now go to `backend/settings.py` and add the following
+
+```bash
+import os
+import dotenv
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'PORT': os.environ.get('DATABASE_PORT')
+    }
+}
+```
+
+Now go to the INSTALLED_APPS section and add the `django.contrib.gis` to installed apps.
+
+```
+INSTALLED_APPS = [
+    some installed apps listed
+
+    'django.contrib.gis'        #the one we just added
+]
+```
+
+## Configure GDAL
+
+we will use the GDAL library Geocoding feature. The Python GDAL supports geocoding operations, enabling the conversion of addresses or place names into geographic coordinates. The library assists in transforming coordinates between different coordinate reference systems. This feature is valuable when working with datasets that use varying projections.
+download the GDAL library; ensure you select theright python version and operating system
+now paste the GDAL in the backend and your flder structure should look this
+
+```
 
 
 
-## 🚀 Deploy to Vercel <a name = "deployment"></a>
-Clone this repository on own GitHub account and deploy to Netlify:
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template)
 
-## ⛏️ Built Using <a name = "built_using"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [React](https://reactjs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+```
 
-## ✍️ Authors <a name = "authors"></a>
-- [@janto-pee](https://github.com/janto-pee) - Idea & Initial work
+run pip install GDAL....
+Finally add the followingto settigs.py
 
-<!-- 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-- Hat tip to anyone whose code was used
-- Inspiration
-- References -->
+```python
+VIRTUAL_ENV_BASE = os.environ.get('VIRTUAL_ENV')
+print(VIRTUAL_ENV_BASE)
+
+GEOS_LIBRARY_PATH = VIRTUAL_ENV_BASE + '/lib/site-packages/osgeo/geos_c.dll'
+GDAL_LIBRARY_PATH = VIRTUAL_ENV_BASE + '/lib/site-packages/osgeo/gdal304.dll'
+```
+
+now run
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+### Set Environment Variables
+
+Since our application takes its configuration from environment variables, To help with that, we can add Python-dotenv to our application to make it load the configuration from a .env file when it is present (e.g. in development) while remaining configurable via the environment
+
+in settings.py,
+
+```bash
+import dotenv
+dotenv.read.dotenv()
+```
+
+now create .env attheroot level of backend
+
+```json
+
+
+
+
+
+```
+
+### Create Super User
+
+python manage.py createsuperuser
+python manage.py runserver
+
+## Job Model
+
+```python
+from datetime import *
+from django.db import models
+from django.contrib.auth.models import User
+
+import geocoder
+import os
+
+from django.contrib.gis.db import models as gismodels
+from django.contrib.gis.geos import Point
+
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+# Create your models here.
+
+class JobType(models.TextChoices):
+    Permanent = 'Permanent'
+    Temporary = 'Temporary'
+    Intership = 'Intership'
+
+class Education(models.TextChoices):
+    Bachelors = 'Bachelors'
+    Masters = 'Masters'
+    Phd = 'Phd'
+
+class Industry(models.TextChoices):
+    Others = 'Others'
+
+class Experience(models.TextChoices):
+    NO_EXPERIENCE = 'No Experience'
+    ONE_YEAR = '1 Years'
+    TWO_YEAR = '2 Years'
+    THREE_YEAR_PLUS = '3 Years above'
+
+def return_date_time():
+    now = datetime.now()
+    return now + timedelta(days=10)
+
+class Job(models.Model):
+    title = models.CharField(max_length=200, null=True)
+    description = models.TextField(null=True)
+    email = models.EmailField(null=True)
+    address = models.CharField(max_length=100, null=True)
+    jobType = models.CharField(
+        max_length=10,
+        choices=JobType.choices,
+        default=JobType.Permanent
+    )
+    education = models.CharField(
+        max_length=10,
+        choices=Education.choices,
+        default=Education.Bachelors
+    )
+    industry = models.CharField(
+        max_length=30,
+        choices=Industry.choices,
+        default=Industry.Business
+    )
+    experience = models.CharField(
+        max_length=20,
+        choices=Experience.choices,
+        default=Experience.NO_EXPERIENCE
+    )
+    salary = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(1000000)])
+    positions = models.IntegerField(default=1)
+    company = models.CharField(max_length=100, null=True)
+    point = gismodels.PointField(default=Point(0.0, 0.0))
+    lastDate = models.DateTimeField(default=return_date_time)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        g = geocoder.mapquest(self.address, key=os.environ.get('GEOCODER_API'))
+
+        print(g)
+
+        lng = g.lng
+        lat = g.lat
+
+        self.point = Point(lng, lat)
+        super(Job, self).save(*args, **kwargs)
+
+```
+
+add all installed app req to settings/Installed_Apps
+
+```
+rest_framework
+django-filters
+job.apps.JobConfig'
+```
+
+## Job Serializer
+
+T
+
+## Job Views
+
+## Adding Search and Filters
+
+## Adding Pagination
+
+## Setup Account
+
+## Account Serializer & Model
+
+## Add Path to URLs.py
+
+## Testing with Postman
+
+
+
+
+
+
+
+
+
+
+
+path('jobs/', views.getAllJobs, name='jobs'),
+
+```
+{
+    title: "DevOps Engineer"
+    description: ""
+    email: "devops@gmail.com"
+    address: "Lagos, Nigeria"
+    jobType: "Permanent"
+    education: "Bachelors"
+    industry: ""
+    experience: "THREE_YEAR_PLUS",
+    salary: "100,000",
+    positions: "Lead SRE"
+    company: "Google"
+    point: ""
+    lastDate: ""
+    user: "Ayo"
+    createdAt: ""
+}
+{
+    title: "Frontend Developer"
+    description: ""
+    email: "frontend@gmail.com"
+    address: "Port Novo, Benin"
+    jobType: "Permanent"
+    education: "Bachelors"
+    industry: ""
+    experience: "THREE_YEAR_PLUS",
+    salary: "100,000",
+    positions: "Lead Developer"
+    company: "Meta"
+    point: ""
+    lastDate: ""
+    user: "Abdou"
+    createdAt: ""
+}
+
+```
