@@ -1,24 +1,24 @@
 # Go EKS Cluster
 ## Table of Contents
 
-1. [What is DRF?](#what-is-nextjs)
+1. [What is Gin?](#what-is-nextjs)
 1. [Introduction](#introduction)
 1. [Project Initialization](#project-setup)
 1. [Folder Structure](#folder-structure)
 1. [Postgresql Setup](#git-setup)
-1. [Configure GDAL](#code-formatting-and-quality-tools)
-1. [Set Env Variables](#git-hooks)
-1. [Create Super User](#vs-code-configuration)
-1. [Create Model](#debugging)
-1. [Serializers](#directory-structure)
-1. [Views](#adding-storybook)
-1. [Setup Account](#creating-a-component-template)
-1. [Account Serializer](#using-the-component-template)
-1. [Error Handling](#adding-a-custom-document)
+1. [Database Migration](#code-formatting-and-quality-tools)
+1. [What is SQLC](#git-hooks)
+1. [SQLC Test](#vs-code-configuration)
+1. [API Serverl](#debugging)
+1. [Load Env Variables](#directory-structure)
+1. [Parameter Validation](#adding-storybook)
+1. [Securely Store Password](#creating-a-component-template)
+1. [Create and Verify JWT](#using-the-component-template)
+1. [Middleware](#adding-a-custom-document)
 1. [Package](#adding-layouts)
-1. [Terraform](#deployment)
-1. [Deployment](#next-steps)
-1. [Wrapping Up](#wrapping-up)
+1. [Create a production DB](#deployment)
+1. [Store & Retrieve Production Secret](#next-steps)
+1. [Deploy App to Kubernetes](#wrapping-up)
 
 ## What is Django Rest Framework?
 
